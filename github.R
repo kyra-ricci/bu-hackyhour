@@ -41,8 +41,8 @@ install.packages("usethis")
 
 # Install Git--------------------------------------------------------------
 
-# Mac users: you may already have git installed. Open your command terminal and type git --version
-# If you have git already, a version number will appear. Horray! You don't need to install anything. Move to the configuration step.
+# Mac users: you may already have git installed. Open your native command terminal and type git --version
+# If you have git already, a version number will appear. Horray! You don't need to install anything. Move to the next step.
 # If you don't have git, you will get an error. You need to install Git (instructions below).
 
 # Go to https://git-scm.com/downloads and install Git
