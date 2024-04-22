@@ -33,15 +33,17 @@ R.version.string
 # Update your R packages. This may take a few minutes.
 update.packages(ask = FALSE, checkBuilt = TRUE)
 
+
+# Install usethis package -------------------------------------------------
+
+# Install usethis package
+install.packages("usethis")
+
 # Install Git--------------------------------------------------------------
 
-# To configure Git, we will have to use the "shell" or command terminal outside of R or RStudio.
-# For Mac users, you will use your native command terminal.
-# For Windows users, you will use something called Git Bash which you will install along with Git.
-
 # Mac users: you may already have git installed. Open your command terminal and type git --version
-# If you have git already, a version number will appear. Horray! You don't need to install anything, but you will still need to configure the settings.
-# If you don't have git, you will get an error. You need to install Git.
+# If you have git already, a version number will appear. Horray! You don't need to install anything. Move to the configuration step.
+# If you don't have git, you will get an error. You need to install Git (instructions below).
 
 # Go to https://git-scm.com/downloads and install Git
 # Windows users: after install, open Git Bash and make sure it's working.
@@ -53,21 +55,33 @@ update.packages(ask = FALSE, checkBuilt = TRUE)
 
 
 
-# Configure Git -----------------------------------------------------------
+# Introduce yourself to Git -----------------------------------------------
 
 # Once Git is installed, we need to configure the settings so Git knows who you are.
-# In the terminal (Mad) or Git Bash (Windows), set your username and email with the following commands:
+
+## Option 1: Shell terminal -----------------------------------------------
+
+# To configure Git, we can use the "shell" or command terminal outside of R or RStudio.
+# For Mac users, you can use your native command terminal.
+# For Windows users, can use something called Git Bash which you installed along with Git.
+# In the terminal (Mac) or Git Bash (Windows), set your username and email with the following commands:
 
 # git config --global user.name "Your Name"
 # git config --global user.email youremail@example.com
 
 # NOTE: You muse use the email that is associated with the Github account you created.
 
+## Option 2: RStudio ------------------------------------------------------
+
 # Alternatively, you can configure git in R using the usethis package:
 usethis::use_git_config(user.name="Your Name", user.email="youremail@example.com")
 
 
 
-
+# Creating directory - Github first
+usethis::create_from_github(
+  "https://github.com/kyra-ricci/bu-hackyhour.git",
+  destdir = "C:/Users/kyrad/Desktop/"
+)
 
 
