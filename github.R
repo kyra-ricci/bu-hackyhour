@@ -193,3 +193,16 @@ usethis::create_from_github(
 
 # REMEMBER TO STAGE, COMMIT, AND PUSH YOUR CHANGES OFTEN!
 
+
+# Notes -------------------------------------------------------------------
+
+# Pick a way to store hacky hour files long-term (this repo or should someone else make it?)
+
+# Once we pick a location, everyone use Github site to create a new folder and upload documents to practice using the online functions
+
+# Mention Gitignore
+
+# Look at the Git tab in RStudio - especially status and branching
+
+# Mention branching - should we experiment?
+
