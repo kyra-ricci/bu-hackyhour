@@ -7,6 +7,8 @@
 
 # Connecting Github and RStudio: https://resources.github.com/github-and-rstudio/
 
+# Other: https://r-bio.github.io/intro-git-rstudio/
+
 # Intro -------------------------------------------------------------------
 
 # Git is a version control system - it was made for developers who may have more than one person working on code at the same time. It is kind of like "Track Changes" in Word.
