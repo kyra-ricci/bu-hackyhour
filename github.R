@@ -171,5 +171,25 @@ usethis::create_from_github(
 
 # Connecting a second computer --------------------------------------------
 
-# Now that you have made changes to your project and have pushed your local changes to Github, you can retrieve those changes on a second computer if you would like.
+# Now that you have made changes to your project and have pushed your local changes to Github, you can retrieve those changes on a second computer if you would like. You can do this using the same process you used to create your test directory
+
+# Go to Github and copy the HTTPS URL of the desired repo (found in <> Code). Let's practice by cloning my hacky hour repo found at: https://github.com/kyra-ricci/bu-hackyhour
+
+# Use the usethis package to clone the repo
+
+usethis::create_from_github(
+  "https://github.com/kyra-ricci/bu-hackyhour.git", # HTTPS URL that you copied earlier
+  destdir = "your/desired/location" # The file directory where you want your folder to be created 
+)
+
+# This will clone the repo and open it in a new session. You can now push and pull changes from this repo.
+
+# When you're done working on one computer, push your changes to Gtihub.
+# To update your second computer with those changes, click the "Pull" button (blue arrow) in the Git tab. This will recieve the latest updates so you can work seamlessly on your other computer.
+
+# The principle is the same if you have a collaborator working in the same repo. You can "Pull" any changes that they have "Pushed."
+
+# You can also upload and change files directly on Github. Just remember to pull those changes locally before continuing to work.
+
+# REMEMBER TO STAGE, COMMIT, AND PUSH YOUR CHANGES OFTEN!
 
