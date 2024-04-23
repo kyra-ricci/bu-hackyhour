@@ -1,0 +1,5 @@
+install.packages("dplyr")
+install.packages("tidyr")
+install.packages("magrittr")
+install.packages("shiny")
+install.packages("ggplot2")
