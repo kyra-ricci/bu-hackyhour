@@ -53,6 +53,9 @@ install.packages("usethis")
 # If you don't have git, you will get an error. You need to install Git (instructions below).
 
 # Go to https://git-scm.com/downloads and install Git
+
+# Check the experimental options first check option (something about pseudo controls)
+
 # Windows users: after install, open Git Bash and make sure it's working.
 
 # -------- STOP HERE FOR PREP - WE WILL DO THE REST TOGETHER --------------
@@ -89,14 +92,18 @@ usethis::use_git_config(user.name="Your Name", user.email="youremail@example.com
 # Mac users, install Homebrew:
 # brew install gh
 
-# Windows users, install Chocolatey:
-# choco install gh
+# Windows users, install Winget:
+# winget install --id GitHub.cli
+
+# Close and reopen the terminal (Bash or native)
 
 # Once this is installed, type the following into your command terminal:
 # gh auth login
 ## When prompted for your preferred protocol for Git operations, select HTTPS.
 ## When asked if you would like to authenticate to Git with your GitHub credentials, enter Y.
 ## You can either authenticate in your browser or generate and paste a personal access token (PAT - see optional instructions below)
+## If you use the browser option, press enter to open the web browser. Don't copy the one-time code directly from git, as the copy/paste bindings are different. Just manually type in the one-time code in your browser.
+
 ## Note: If this doesn't work for you, you may have to reinstall Git with different settings. Reinstalling Git with the option "Enable experimental support for pseudo consoles" fixed the issue for me.
 
 # Congrats! Git and Github are now connected.
@@ -137,6 +144,11 @@ usethis::create_from_github(
   destdir = "C:/your/desired/location/" # The file directory where you want your folder to be created (I usually put them on my desktop)
 )
 
+usethis::create_from_github(
+  "https://github.com/kyra-ricci/test.git",
+  destdir = "C:/Users/kyrad/Desktop"
+)
+
 # Alternatively, if you go to File > New Project, you may have the option to clone from a Github repo from the windows.
 
 # Nice work! This RStudio project and Github are now talking to one another.
@@ -151,6 +163,9 @@ usethis::create_from_github(
 # this is a test
 
 # Click the “Git” tab in upper right pane (or the same pane where you usually find your Environment if it's not in the upper right).
+
+# If you don't see the Git tab, go to Tools > Global Options > Pane Layout > and make sure you have "VCS" checked in your environment tab
+
 # This is where you will interface with Git/Github. You should see three columns: "Staged", "Status", and "Path".
 # Check “Staged” box for test.r.
 # If you’re not already in the Git pop-up, click “Commit”.
@@ -179,7 +194,8 @@ usethis::create_from_github(
 
 usethis::create_from_github(
   "https://github.com/kyra-ricci/bu-hackyhour.git", # HTTPS URL that you copied earlier
-  destdir = "your/desired/location" # The file directory where you want your folder to be created 
+  destdir = "your/desired/location", # The file directory where you want your folder to be created 
+  forks = FALSE # you may need this line if it doesn't work
 )
 
 # This will clone the repo and open it in a new session. You can now push and pull changes from this repo.
@@ -208,3 +224,4 @@ usethis::create_from_github(
 
 # Mention branching - should we experiment?
 
+# Newest line
