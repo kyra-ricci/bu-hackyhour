@@ -198,6 +198,8 @@ usethis::create_from_github(
 
 # Pick a way to store hacky hour files long-term (this repo or should someone else make it?)
 
+# Test out changing this file and pushing to Git
+
 # Once we pick a location, everyone use Github site to create a new folder and upload documents to practice using the online functions
 
 # Mention Gitignore
