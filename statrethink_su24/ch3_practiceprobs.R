@@ -72,4 +72,26 @@ simplehist(dummy_w, xlab="dummy water count")
 
 mean(dummy_w==6) # 0.214
 
-# 3M5 
+# 3H1
+library(rethinking)
+data(homeworkch3)
+sum(birth1) + sum(birth2)
+
+p_grid <- seq(from=0, to=1, length.out=1000)
+prior <- rep(1, 1000) # uniform prior
+likelihood <- dbinom(111, size=200, prob=p_grid) # 111 boys out of 200 total obs
+unstd.posterior <- likelihood * prior
+posterior <- unstd.posterior / sum(unstd.posterior)
+
+# plot posterior
+plot(p_grid, posterior, type="b",
+     xlab="probability of boy birth", ylab="posterior probability")
+
+# sample from posterior
+samples <- sample(p_grid, prob=posterior, size=1e4, replace=TRUE)
+dens(samples)
+
+# Which value maximizes posterior prob?
+p_grid[which.max(posterior)] # 0.554
+
+# 3H2
