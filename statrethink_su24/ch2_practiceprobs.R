@@ -1,3 +1,5 @@
+# Medium problems --------------------------------------------------------------
+
 # 2M1: Grid approximation
 
 # (1) WWW
@@ -155,4 +157,80 @@ plot(p_grid, posterior, type="b",
 # Pr(Earth|land) =
 (0.3 * 0.5)/0.65 # = 0.23
 
-#2M4
+# Simulation of black card medium problems ------------------------------------
+p <- c()
+for(i in 1:100){
+  b_sides <- c(0,1,2) # three cards, one with 0 black sides, one with 1, one with 2
+  card <- sample(b_sides,1e4,replace=T)
+  b_up <- rbinom(1e4,1,card/2)
+  b_down <- rbinom(1e4,1,ifelse(card==0,0,ifelse(card==1 & b_up==1,0,1)))
+  prob <- sum(b_up==1 & b_down==1)/sum(b_up==1)
+  p[i] <- prob
+  }
+
+hist(p)
+abline(v = 2/3, col="red", lwd = 3)
+
+# Hard problems ----------------------------------------------------------------
+
+# 2H1
+
+Pr_Twins_A <- 0.1
+Pr_Twins_B <- 0.2
+Pr_A <- 0.5
+Pr_B <- 0.5
+
+# Pr(Twins) = Pr(Twins|A)Pr(A) + Pr(Twins|B)Pr(B)
+Pr_Twins <- Pr_Twins_A*Pr_A + Pr_Twins_B*Pr_B
+Pr_Twins # = 0.15
+
+# Pr(A|Twins) = (Pr(Twins|A)*Pr(A))/Pr(Twins)
+Pr_A_Twins <- (Pr_Twins_A*Pr_A)/Pr_Twins
+Pr_A_Twins # = 0.333 = 1/3
+
+# Pr(B|Twins) = (Pr(Twins|B)*Pr(B))/Pr(Twins)
+Pr_B_Twins <- (Pr_Twins_B*Pr_B)/Pr_Twins
+Pr_B_Twins # = 0.666 = 2/3
+
+# Update Pr_B and Pr_A to be equal to Pr_A_Twins and Pr_B_Twins, since we know that the first birth was twins. We need to use this information to update the probability that the mother is one or the other species.
+
+Pr_A2 <- Pr_A_Twins
+Pr_B2 <- Pr_B_Twins
+
+# Pr(Twins2) = Pr(Twins|A)Pr(A2)+Pr(Twins|B)Pr(B2)
+Pr_Twins2 <- Pr_Twins_A*Pr_A2 + Pr_Twins_B*Pr_B2
+Pr_Twins2 # = 0.166 = 1/6
+
+# 2H2
+
+Pr_A_Twins # = 1/3
+
+# 2H3
+
+Pr_Twins1_A <- Pr_Twins_A
+Pr_Infant1_A <- 1-Pr_Twins_A
+Pr_A_Twins1 <- 1/3
+Pr_Twins1 <- 0.15
+Pr_Twins2 <- 0.167
+Pr_Infant2 <- 1-Pr_Twins2
+Pr_A2 <- Pr_A_Twins1
+Pr_B2 <- 0.667
+
+Pr_Twins1_A # = 0.1
+Pr_Infant1_A # = 0.9
+Pr_A2 # = 0.333
+Pr_B2 # = 0.667
+Pr_Twins1 # = 0.15
+Pr_Twins2 # = 0.167
+Pr_Infant2 # = 0.833
+# Pr_Infant2_A2 = ?
+# Pr_A_Infant2 = ?
+
+# Pr(Infant2) = 1-(Pr(Twins|A)Pr(A2)+Pr(Twins|B)Pr(B2))
+
+#Pr(A2|Infant2) = (Pr(Infant1|A2)*Pr(A2)/(Pr(Infant1))
+
+Pr_A2_Infant2 <- (Pr_Infant1_A*Pr_A2)/0.9
+Pr_A2_Infant2
+
+
