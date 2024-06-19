@@ -225,3 +225,12 @@ usethis::create_from_github(
 # Mention branching - should we experiment?
 
 # Newest line - changes on Github
+
+# Cloning Stat rethinking summer Github
+
+install.packages("usethis")
+
+usethis::create_from_github(
+  "https://github.com/BinghamtonBioHackyHours/Summer-2024-Statistical-Rethinking.git",
+  destdir = "C:/Users/kyrad/Desktop"
+)
