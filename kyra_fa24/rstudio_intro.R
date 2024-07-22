@@ -13,22 +13,30 @@
 
 # Projects -------------------------------------------------------
 
-# 
+# Create new project using either:
+## File > New Project 
+# or
+## Upper right hand corner - should be a box with an R in it - click it and click New Project
 
+# Select New Directory
+# Select New Project
+# Name your project folder (e.g., "hackyhour")
+# Select where you want the project to be located (it will create a new file folder in your file explorer) - e.g., I usually put them on my desktop
+# R should open in a new session and the top right corner should have the box with the R and the name of your new project
 
 # Source + console panels -----------------------------------------
 
-# Create a new R script file (File > New File > R Script)
-# R is fundamentally a computer. Using your source and console panels, you can ask it to do things like simple math problems:
+# Create a new R script file (File > New File > R Script) and name it "test"
+# R is fundamentally a computer. In your script files, you can ask it to do things like simple math problems:
 
 4 + 10 
 
 # Highlight and press "Run" OR use Ctrl + Enter when your cursor is at the end of the line you want to run
 # Notice that the script file you are typing in did not change.
-# Look below at the console. You should see the code you just typed (4 + 10) followed by the output delivered by R (14)
+# Look below at the console. You should see the code you just typed (4 + 10) followed by the output delivered by R (the answer: 14)
 
 # Edit your problem above to be 4 + 11 instead of 4 + 10 and run it again
-# Notice that new content is added to the console, not edited
+# Notice that new content is added to the console. The old query and response are still in the console even though it has been edited in the script.
 
 # Try putting your cursor down in the console and typing a different problem (e.g., 20 + 14) and press enter
 # Notice how nothing has changed in the script file
