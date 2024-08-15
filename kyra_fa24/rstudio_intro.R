@@ -24,6 +24,9 @@
 # Select where you want the project to be located (it will create a new file folder in your file explorer) - e.g., I usually put them on my desktop
 # R should open in a new session and the top right corner should have the box with the R and the name of your new project
 
+# Create script folder
+# Create data folder
+
 # Source + console panels -----------------------------------------
 
 # Create a new R script file (File > New File > R Script) and name it "test"
@@ -80,6 +83,7 @@ plot(y,x)
 # Packages tab: will have a list of all of the packages you've installed (we will talk about packages later, just know that it's here)
 
 # Help tab: Every function in RStudio can be queried to ask, how do I use this? Do this using ? followed by the function name
+?plot
 ?boxplot
 ?lm
 ?data.frame
